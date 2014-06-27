@@ -1,5 +1,5 @@
 1. git
-use root install git
+use root to install git
 you will see following error when you set config as a regular user:
 [hoyao@dhcp-129-86 Documents]$ git config user.name 'hoyao'
 error: could not lock config file .git/config: No such file or directory
