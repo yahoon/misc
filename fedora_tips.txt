@@ -11,3 +11,25 @@ cd to home folder
 [hoyao@dhcp-129-86 ~]$ git config user.name 'hoyao'
 [hoyao@dhcp-129-86 ~]$ git config user.email 'hoyao@redhat.com'
 
+2. install teamviewer
+download rpm from http://www.teamviewer.com/zhCN/download/linux.aspx
+[hoyao@dhcp-129-86 Downloads]$ sudo rpm -ivh teamviewer_linux.rpm 
+warning: teamviewer_linux.rpm: Header V4 DSA/SHA1 Signature, key ID 72db573c: NOKEY
+error: Failed dependencies:
+	libXrandr.so.2 is needed by teamviewer-9.0.27891-1.i686
+
+fix it:
+use localinstall command, which will resolve dependency and install them
+[hoyao@dhcp-129-86 Downloads]$ sudo yum localinstall teamviewer_linux.rpm 
+Loaded plugins: langpacks, refresh-packagekit
+Examining teamviewer_linux.rpm: teamviewer-9.0.27891-1.i686
+Marking teamviewer_linux.rpm to be installed
+Resolving Dependencies
+--> Running transaction check
+---> Package teamviewer.i686 0:9.0.27891-1 will be installed
+--> Processing Dependency: libXrandr.so.2 for package: teamviewer-9.0.27891-1.i686
+--> Running transaction check
+---> Package libXrandr.i686 0:1.4.1-2.fc20 will be installed
+--> Finished Dependency Resolution
+
+
