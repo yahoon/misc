@@ -1,3 +1,4 @@
+This doc is assumed to work on Fedora 19 and 20
 1. git
 use root to install git
 you will see following error when you set config as a regular user:
@@ -33,3 +34,22 @@ Resolving Dependencies
 --> Finished Dependency Resolution
 
 
+3. ruby
+[hoyao@dhcp-129-86 misc]$ sudo yum install ruby ruby-devel ruby-doc ruby-irb rubygems rubygems-devel rubygems-doc
+
+
+4. Google chrome
+create repo file:
+[root@dhcp-129-86 ~]# cat /etc/yum.repos.d/google-chrome.repo
+#### begin ####
+[google-chrome]
+name=google-chrome
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64
+enabled=1
+gpgcheck=1
+#### end ####
+
+install the rpm
+[root@dhcp-129-86 ~]# yum install  google-chrome-stable
+
+refer: http://www.tuicool.com/articles/VVfyma
