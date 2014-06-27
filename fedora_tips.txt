@@ -1,0 +1,13 @@
+1. git
+use root install git
+you will see following error when you set config as a regular user:
+[hoyao@dhcp-129-86 Documents]$ git config user.name 'hoyao'
+error: could not lock config file .git/config: No such file or directory
+
+fix:
+cd to home folder
+[hoyao@dhcp-129-86 ~]$ mkdir .git
+[hoyao@dhcp-129-86 ~]$ touch .git/config
+[hoyao@dhcp-129-86 ~]$ git config user.name 'hoyao'
+[hoyao@dhcp-129-86 ~]$ git config user.email 'hoyao@redhat.com'
+
